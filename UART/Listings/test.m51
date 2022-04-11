@@ -1,0 +1,128 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/29/2021  21:11:28  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE .\Objects\test1.obj TO .\Objects\test PRINT (.\Listings\test.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\test1.obj (TEST1)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\test (TEST1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         ?DT?TEST1
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0020H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+                    0026H     07DAH                  *** GAP ***
+            CODE    0800H     0019H     UNIT         ?PR?INIT?TEST1
+            CODE    0819H     000EH     UNIT         ?PR?UART?TEST1
+            CODE    0827H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0833H     0005H     UNIT         ?PR?MAIN?TEST1
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\test (TEST1)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TEST1
+
+?PR?MAIN?TEST1
+  +--> ?PR?INIT?TEST1
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\test (TEST1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TEST1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/29/2021  21:11:28  PAGE 2
+
+
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0833H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:0800H         PUBLIC        init
+  C:0819H         PUBLIC        uart
+  D:008DH         PUBLIC        TH1
+  B:0098H.7       PUBLIC        SM0
+  B:0098H.6       PUBLIC        SM1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  D:0008H         PUBLIC        a
+  B:0098H.4       PUBLIC        REN
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          INIT
+  C:0800H         LINE#         6
+  C:0800H         LINE#         7
+  C:0800H         LINE#         8
+  C:0803H         LINE#         9
+  C:0806H         LINE#         10
+  C:0809H         LINE#         11
+  C:080CH         LINE#         12
+  C:080EH         LINE#         13
+  C:0810H         LINE#         14
+  C:0812H         LINE#         15
+  C:0814H         LINE#         16
+  C:0816H         LINE#         17
+  C:0818H         LINE#         18
+  -------         ENDPROC       INIT
+  -------         PROC          UART
+  C:0819H         LINE#         20
+  C:0819H         LINE#         22
+  C:081CH         LINE#         23
+  C:081EH         LINE#         24
+  C:0821H         LINE#         25
+  C:0824H         LINE#         26
+  C:0826H         LINE#         27
+  -------         ENDPROC       UART
+  -------         PROC          MAIN
+  C:0833H         LINE#         29
+  C:0833H         LINE#         30
+  C:0833H         LINE#         31
+  C:0836H         LINE#         32
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TEST1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 002FH BYTE ( 2%) *
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/29/2021  21:11:28  PAGE 3
+
+
+******************************************************************************
+
+Program Size: data=10.0 xdata=0 code=62
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
